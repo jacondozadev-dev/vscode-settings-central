@@ -3,17 +3,29 @@
   // Revisar antes de copiar a una maquina personal.
   "http.proxyAuthorization": null,
   "settingsSync.ignoredExtensions": [],
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
 
-  // Auto-approve puede ejecutar comandos sin confirmacion.
-  // Mantener comentado salvo que se necesite explicitamente.
-  // "chat.tools.terminal.autoApprove": {
-  //   "/^npm install$/": {
-  //     "approve": true,
-  //     "matchCommandLine": true
-  //   },
-  //   "/^npm install --legacy-peer-deps$/": {
-  //     "approve": true,
-  //     "matchCommandLine": true
-  //   }
-  // }
+  "chat.tools.terminal.autoApprove": {
+    "/^npm install$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^npm install --legacy-peer-deps$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^npm install eslint@latest @eslint/js@latest typescript-eslint@latest eslint-config-prettier@latest eslint-plugin-prettier@latest globals@latest eslint-plugin-sort-destructure-keys@latest --save-dev$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^npm install && npm run lint$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "git restore": true,
+    "/^node -e \"console\\.log\\(require\\('child_process'\\)\\.spawnSync\\('npm',\\['run','start','qa','web'\\],\\{shell:false,stdio:'pipe'\\}\\)\\.stderr\\.toString\\(\\)\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
 }

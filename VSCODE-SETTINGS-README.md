@@ -4,7 +4,7 @@ Repositorio para derivar configuraciones reutilizables desde `settingsMAC.json`.
 
 `settingsMAC.json` es el snapshot original de una maquina macOS laboral. No se modifica.
 
-## Archivos
+## Archivos VS Code
 
 | Archivo | Uso |
 | --- | --- |
@@ -18,7 +18,15 @@ Repositorio para derivar configuraciones reutilizables desde `settingsMAC.json`.
 | `settings.work.jsonc` | Ajustes laborales o sensibles |
 | `settingsMAC.json` | Fuente original; no editar como archivo normalizado |
 
-## Como usar
+## Archivos Windows Terminal
+
+| Archivo | Uso |
+| --- | --- |
+| `windows-terminal.settings.jsonc` | Plantilla para Windows Terminal |
+
+Los archivos de VS Code y Windows Terminal no son intercambiables. Aunque ambos se llaman `settings.json` en sus aplicaciones reales, usan esquemas distintos.
+
+## Como usar VS Code
 
 1. Abre VS Code.
 2. Abre `Preferences: Open User Settings (JSON)`.
@@ -60,6 +68,20 @@ settings.linux.jsonc
 - Mantener `chat.tools.terminal.autoApprove` fuera de la base.
 - Revisar `settings.ai.jsonc` antes de copiar auto-approve de URLs.
 - Usar `.jsonc` porque estos archivos tienen comentarios.
+- No copiar configuracion de Windows Terminal dentro de VS Code, ni al reves.
+
+## Como usar Windows Terminal
+
+1. Abre Windows Terminal.
+2. Abre `Settings`.
+3. Usa `Open JSON file`.
+4. Usa `windows-terminal.settings.jsonc` como referencia.
+
+Ruta normal:
+
+```text
+%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+```
 
 ## Extensiones sugeridas
 
