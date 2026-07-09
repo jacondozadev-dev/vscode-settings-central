@@ -1,0 +1,6 @@
+{
+  // Stack web: TypeScript, JavaScript, Angular, Ionic o Node.js.
+  // Combinar con settings.base.jsonc.
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

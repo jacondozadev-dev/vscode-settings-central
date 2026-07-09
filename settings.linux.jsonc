@@ -1,0 +1,7 @@
+{
+  // Linux: ajustes especificos de maquina.
+  // Ejemplo si Flutter esta instalado en /opt/flutter:
+  // "dart.sdkPath": "/opt/flutter/bin/cache/dart-sdk",
+  // "dart.flutterSdkPath": "/opt/flutter",
+  // "flutter.sdkPath": "/opt/flutter"
+}

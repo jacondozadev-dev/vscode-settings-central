@@ -1,8 +1,6 @@
 {
-  "description": "VSCode Settings Base - Configuración reutilizable y centralizada",
-  "lastUpdated": "2026-07-08",
-  "version": "1.0.0",
-
+  // Base portable: usar en macOS, Windows o Linux.
+  // No incluye rutas absolutas, auto-approve de terminal ni ajustes laborales.
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.wordWrap": "on",
@@ -31,6 +29,9 @@
     "editor.formatOnType": true,
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.suggest.insertMode": "replace",
+    "editor.suggestSelection": "first",
     "typescript.autoClosingTags": true
   },
 
@@ -62,6 +63,5 @@
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
 
-  "chat.viewSessions.orientation": "stacked",
-  "http.proxyAuthorization": null
+  "chat.viewSessions.orientation": "stacked"
 }

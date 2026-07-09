@@ -1,0 +1,19 @@
+{
+  // Entorno laboral o sensible.
+  // Revisar antes de copiar a una maquina personal.
+  "http.proxyAuthorization": null,
+  "settingsSync.ignoredExtensions": [],
+
+  // Auto-approve puede ejecutar comandos sin confirmacion.
+  // Mantener comentado salvo que se necesite explicitamente.
+  // "chat.tools.terminal.autoApprove": {
+  //   "/^npm install$/": {
+  //     "approve": true,
+  //     "matchCommandLine": true
+  //   },
+  //   "/^npm install --legacy-peer-deps$/": {
+  //     "approve": true,
+  //     "matchCommandLine": true
+  //   }
+  // }
+}

@@ -1,0 +1,14 @@
+{
+  // Stack Flutter/Dart portable.
+  // No incluye rutas SDK porque cambian por maquina.
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnType": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+
+  "dart.lineLength": 100
+}
