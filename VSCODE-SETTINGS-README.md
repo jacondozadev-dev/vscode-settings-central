@@ -9,6 +9,7 @@ Repositorio para derivar configuraciones reutilizables desde `settingsMAC.json`.
 | Archivo | Uso |
 | --- | --- |
 | `settings.base.jsonc` | Configuracion portable para macOS, Windows y Linux |
+| `settings.ai.jsonc` | Preferencias de herramientas AI y auto-approve de URLs |
 | `settings.web.jsonc` | Ajustes para TypeScript, JavaScript, Angular, Ionic o Node.js |
 | `settings.flutter.jsonc` | Ajustes portables para Flutter/Dart |
 | `settings.macos.jsonc` | Ajustes especificos de macOS, como LLDB/Xcode |
@@ -30,6 +31,7 @@ Ejemplos:
 ```text
 Maquina personal Windows + web:
 settings.base.jsonc
+settings.ai.jsonc
 settings.web.jsonc
 settings.windows.jsonc
 ```
@@ -37,6 +39,7 @@ settings.windows.jsonc
 ```text
 Mac laboral + web:
 settings.base.jsonc
+settings.ai.jsonc
 settings.web.jsonc
 settings.macos.jsonc
 settings.work.jsonc
@@ -55,6 +58,7 @@ settings.linux.jsonc
 - No poner rutas absolutas en `settings.base.jsonc`.
 - No poner configuraciones laborales en `settings.base.jsonc`.
 - Mantener `chat.tools.terminal.autoApprove` fuera de la base.
+- Revisar `settings.ai.jsonc` antes de copiar auto-approve de URLs.
 - Usar `.jsonc` porque estos archivos tienen comentarios.
 
 ## Extensiones sugeridas

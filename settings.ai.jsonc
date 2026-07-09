@@ -1,0 +1,27 @@
+{
+  // Preferencias de extensiones AI.
+  // Origen: configuracion actual de VS Code en Windows personal.
+  "chat.viewSessions.orientation": "stacked",
+
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  "chatgpt.localeOverride": "es-419",
+  "chatgpt.reviewDelivery": "inline",
+
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilotcli:claude-haiku-4.5",
+
+  // Auto-approve de URLs. Revisar antes de copiar a equipos laborales.
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://code.claude.com/docs": {
+      "approveRequest": true,
+      "approveResponse": false
+    },
+    "https://claude.com/pricing": {
+      "approveRequest": true,
+      "approveResponse": false
+    }
+  }
+}

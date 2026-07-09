@@ -1,4 +1,33 @@
 {
   // Windows: ajustes especificos de maquina.
-  // Mantener vacio hasta tener una necesidad real.
+  // Origen: C:\Users\Jacobo\AppData\Roaming\Code\User\settings.json.
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "path": "C:\\Users\\Jacobo\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash",
+      "icon": "terminal-git-bash"
+    }
+  },
+
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.initialHint": false,
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "ms-settings"
+  ]
 }
