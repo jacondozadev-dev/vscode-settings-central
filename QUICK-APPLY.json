@@ -1,0 +1,151 @@
+{
+  "title": "Quick Apply - VSCode Settings",
+  "description": "Pasos rápidos para aplicar configuración centralizada",
+  "version": "1.0.0",
+
+  "scenario_1_first_time": {
+    "description": "Primera vez aplicando estas configuraciones",
+    "steps": [
+      "1. Abre VSCode",
+      "2. Cmd+Shift+P → 'Preferences: Open Settings (JSON)'",
+      "3. Copia TODO el contenido de '.vscode-settings-base.json'",
+      "4. Pega en tu settings.json (reemplaza o fusiona)",
+      "5. Si trabajas con TypeScript/Angular/Node: Agrega la sección de 'web-stack'",
+      "6. Si trabajas con Flutter: Agrega la sección de 'flutter-stack'",
+      "7. Guarda (Cmd+S)",
+      "8. Instala extensiones recomendadas del marketplace"
+    ],
+    "time": "~5 minutos"
+  },
+
+  "scenario_2_nueva_maquina": {
+    "description": "Aplicar en una máquina nueva",
+    "steps": [
+      "1. Clona o copia los archivos .vscode-settings-* a tu máquina",
+      "2. Abre VSCode en la máquina nueva",
+      "3. Cmd+Shift+P → 'Preferences: Open Settings (JSON)'",
+      "4. Copia TODO de '.vscode-settings-base.json'",
+      "5. Pega en settings.json (nuevo o existente)",
+      "6. Agrega stacks según proyectos que usarás",
+      "7. Instala extensiones",
+      "8. Reinicia VSCode (Cmd+Shift+P → 'Reload Window')"
+    ],
+    "time": "~3 minutos"
+  },
+
+  "scenario_3_sincronizacion_cloud": {
+    "description": "Mantener sincronizado en múltiples máquinas (automático)",
+    "option_a_settings_sync": {
+      "description": "Built-in VSCode Settings Sync (RECOMENDADO)",
+      "steps": [
+        "1. Cmd+Shift+P → 'Settings: Turn on Settings Sync'",
+        "2. Elige 'Sign in with GitHub' o 'Microsoft Account'",
+        "3. Selecciona qué sincronizar (Settings, Keybindings, Extensions, etc)",
+        "4. En otra máquina, repite pasos 1-2",
+        "5. Se sincronizará automáticamente"
+      ],
+      "pros": ["Automático", "Built-in", "Sincroniza todo"],
+      "contras": ["Necesita cuenta GitHub/Microsoft"]
+    },
+    "option_b_git": {
+      "description": "Repositorio Git privado",
+      "steps": [
+        "1. Crea repo privado: 'vscode-settings'",
+        "2. git add .vscode-settings-*.json",
+        "3. git commit -m 'Initial settings'",
+        "4. git push",
+        "5. En otra máquina: git clone <repo>",
+        "6. Copia archivos a ubicación local"
+      ],
+      "pros": ["Control total", "Histórico de cambios"],
+      "contras": ["Manual", "Requiere git"]
+    },
+    "option_c_cloud_storage": {
+      "description": "Google Drive, Dropbox, iCloud",
+      "steps": [
+        "1. Guarda .vscode-settings-*.json en Drive/Dropbox",
+        "2. Comparte la carpeta con tus otras máquinas",
+        "3. Descarga cuando necesites actualizar",
+        "4. Copia a settings.json local"
+      ],
+      "pros": ["Simple", "Sin dependencias"],
+      "contras": ["Sincronización manual"]
+    }
+  },
+
+  "scenario_4_agregar_stack_nuevo": {
+    "description": "Usar un nuevo stack tecnológico",
+    "example": "De web stack a flutter",
+    "steps": [
+      "1. Lee la sección del nuevo stack en '.vscode-settings-by-stack.json'",
+      "2. Copia el bloque de configuración",
+      "3. Abre VSCode settings (Cmd+Shift+P → Settings JSON)",
+      "4. Pega la configuración del nuevo stack",
+      "5. Ajusta rutas (ej: paths de Flutter SDK)",
+      "6. Instala extensiones del nuevo stack",
+      "7. Reinicia VSCode"
+    ],
+    "note": "Mantén la configuración base. Los stacks son aditivos."
+  },
+
+  "scenario_5_actualizar_settings": {
+    "description": "Después de cambiar configuración en una máquina",
+    "steps": [
+      "1. Haz cambios en VSCode (settings.json)",
+      "2. Copia manualmente los cambios a '.vscode-settings-base.json' o '.vscode-settings-by-stack.json'",
+      "3. Haz commit: 'git commit -m \"Update: [descripción del cambio]\"'",
+      "4. Push: 'git push'",
+      "5. En otras máquinas: 'git pull' y actualiza settings.json"
+    ],
+    "alternative": "Si usas VSCode Settings Sync, se sincroniza automáticamente"
+  },
+
+  "instalacion_extensiones": {
+    "description": "Instalar extensiones recomendadas por línea de comando",
+    "web_stack": [
+      "code --install-extension Angular.ng-template",
+      "code --install-extension esbenp.prettier-vscode",
+      "code --install-extension dbaeumer.vscode-eslint",
+      "code --install-extension ms-vscode.vscode-typescript-next"
+    ],
+    "flutter_stack": [
+      "code --install-extension Dart-Code.dart-code",
+      "code --install-extension Dart-Code.flutter"
+    ],
+    "useful": [
+      "code --install-extension eamodio.gitlens",
+      "code --install-extension GitHub.copilot"
+    ]
+  },
+
+  "rutas_importantes": {
+    "macos": {
+      "settings": "~/Library/Application Support/Code/User/settings.json",
+      "extensions": "~/.vscode/extensions/",
+      "keybindings": "~/Library/Application Support/Code/User/keybindings.json"
+    },
+    "linux": {
+      "settings": "~/.config/Code/User/settings.json",
+      "extensions": "~/.vscode/extensions/",
+      "keybindings": "~/.config/Code/User/keybindings.json"
+    },
+    "windows": {
+      "settings": "%APPDATA%\\Code\\User\\settings.json",
+      "extensions": "%USERPROFILE%\\.vscode\\extensions\\",
+      "keybindings": "%APPDATA%\\Code\\User\\keybindings.json"
+    }
+  },
+
+  "validacion": {
+    "description": "Verifica que todo esté aplicado correctamente",
+    "checklist": [
+      "☐ VSCode reconoce Prettier (botón formato en la esquina)",
+      "☐ ESLint muestra errores en el editor",
+      "☐ TypeScript autocomplete funciona",
+      "☐ Flutter: Dart analyzer reconoce el SDK",
+      "☐ Fuente es 'FiraCode Nerd Font' en editor",
+      "☐ 2 espacios de indentación"
+    ],
+    "troubleshooting": "Ver VSCODE-SETTINGS-README.md → Solución de Problemas"
+  }
+}

@@ -1,0 +1,77 @@
+{
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "editor.codeActionsOnSave": {
+    
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit",
+        "source.sortMembers": "explicit"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+        "editor.suggest.insertMode": "replace",
+        "editor.suggestSelection": "first",
+        "typescript.autoClosingTags": true
+    },
+    "editor.wordWrap": "on",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "lldb.suppressUpdateNotifications": true,
+    "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.tools.terminal.autoApprove": {
+        "/^npm install$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm install --legacy-peer-deps$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm install eslint@latest @eslint/js@latest typescript-eslint@latest eslint-config-prettier@latest eslint-plugin-prettier@latest globals@latest eslint-plugin-sort-destructure-keys@latest --save-dev$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npm install && npm run lint$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "git restore": true,
+        "/^node -e \"console\\.log\\(require\\('child_process'\\)\\.spawnSync\\('npm',\\['run','start','qa','web'\\],\\{shell:false,stdio:'pipe'\\}\\)\\.stderr\\.toString\\(\\)\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "chat.viewSessions.orientation": "stacked",
+    "settingsSync.ignoredExtensions": [],
+    "http.proxyAuthorization": null
+}
