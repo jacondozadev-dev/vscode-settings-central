@@ -1,0 +1,6 @@
+{
+  // Preferencias AI portables entre maquinas.
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "gitlens.ai.model": "vscode"
+}
