@@ -9,25 +9,34 @@ Si existe `archive/settingsMAC original.json`, tratelo solo como referencia hist
 
 | Archivo | Uso |
 | --- | --- |
-| `settings.base.jsonc` | Configuracion portable para macOS, Windows y Linux |
-| `settings.ai.jsonc` | Preferencias AI portables entre maquinas |
-| `settings.web.jsonc` | Ajustes para TypeScript, JavaScript, Angular, Ionic o Node.js |
-| `settings.flutter.jsonc` | Ajustes portables para Flutter/Dart |
-| `settings.macos.jsonc` | Ajustes especificos de macOS, como LLDB/Xcode |
-| `settings.windows.jsonc` | Ajustes especificos de Windows |
-| `settings.linux.jsonc` | Ajustes especificos de Linux |
-| `settings.context.work.jsonc` | Ajustes laborales o sensibles |
-| `settings.context.personal.jsonc` | Ajustes personales |
-| `settings.auto-approve.jsonc` | Auto-aprobaciones explicitas de terminal |
-| `settingsMAC.json` | Composicion generada para macOS |
+| `vscode/settings.base.jsonc` | Configuracion portable para macOS, Windows y Linux |
+| `vscode/settings.ai.jsonc` | Preferencias AI portables entre maquinas |
+| `vscode/settings.web.jsonc` | Ajustes para TypeScript, JavaScript, Angular, Ionic o Node.js |
+| `vscode/settings.flutter.jsonc` | Ajustes portables para Flutter/Dart |
+| `vscode/settings.macos.jsonc` | Ajustes especificos de macOS, como LLDB/Xcode |
+| `vscode/settings.windows.jsonc` | Ajustes especificos de Windows |
+| `vscode/settings.linux.jsonc` | Ajustes especificos de Linux |
+| `vscode/settings.context.work.jsonc` | Ajustes laborales o sensibles |
+| `vscode/settings.context.personal.jsonc` | Ajustes personales |
+| `vscode/settings.auto-approve.jsonc` | Auto-aprobaciones explicitas de terminal |
+| `vscode/settingsMAC.json` | Composicion generada para macOS |
 
 ## Archivos Windows Terminal
 
 | Archivo | Uso |
 | --- | --- |
-| `windows-terminal.settings.jsonc` | Plantilla para Windows Terminal |
+| `windows-terminal/settings.jsonc` | Plantilla para Windows Terminal |
 
 Los archivos de VS Code y Windows Terminal no son intercambiables. Aunque ambos se llaman `settings.json` en sus aplicaciones reales, usan esquemas distintos.
+
+## Archivos Shell
+
+| Archivo | Uso |
+| --- | --- |
+| `shell/windows-powershell/Microsoft.PowerShell_profile.ps1` | Copia de referencia del perfil PowerShell de Windows |
+| `shell/windows-powershell/profile.common.ps1` | Funciones y configuracion comun cargada por el perfil PowerShell |
+
+Los archivos de shell son copias. No se aplican automaticamente ni modifican el perfil real.
 
 ## Como generar settings de VS Code
 
@@ -39,8 +48,8 @@ Si una clave se repite, debe prevalecer el ultimo archivo de la lista.
 Usar siempre:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
 ```
 
 Luego agrega solo los archivos que correspondan al sistema operativo, stack y contexto.
@@ -56,19 +65,19 @@ Destino:
 Windows personal:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.windows.jsonc
-settings.context.personal.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.windows.jsonc
+vscode/settings.context.personal.jsonc
 ```
 
 Windows laboral:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.windows.jsonc
-settings.context.work.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.windows.jsonc
+vscode/settings.context.work.jsonc
 ```
 
 ### macOS
@@ -82,19 +91,19 @@ Destino:
 macOS personal:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.macos.jsonc
-settings.context.personal.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.macos.jsonc
+vscode/settings.context.personal.jsonc
 ```
 
 macOS laboral:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.macos.jsonc
-settings.context.work.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.macos.jsonc
+vscode/settings.context.work.jsonc
 ```
 
 ### Linux
@@ -108,19 +117,19 @@ Destino:
 Linux personal:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.linux.jsonc
-settings.context.personal.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.linux.jsonc
+vscode/settings.context.personal.jsonc
 ```
 
 Linux laboral:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.linux.jsonc
-settings.context.work.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.linux.jsonc
+vscode/settings.context.work.jsonc
 ```
 
 ### Agregados por stack o flujo
@@ -128,44 +137,44 @@ settings.context.work.jsonc
 Agregar despues del sistema operativo y contexto, solo si aplica:
 
 ```text
-settings.web.jsonc
-settings.flutter.jsonc
-settings.auto-approve.jsonc
+vscode/settings.web.jsonc
+vscode/settings.flutter.jsonc
+vscode/settings.auto-approve.jsonc
 ```
 
-`settings.auto-approve.jsonc` no es personal ni laboral por si mismo. Usarlo solo si quieres permitir esas auto-aprobaciones de terminal en esa maquina.
+`vscode/settings.auto-approve.jsonc` no es personal ni laboral por si mismo. Usarlo solo si quieres permitir esas auto-aprobaciones de terminal en esa maquina.
 
 ### Ejemplos de composicion
 
 Windows personal con proyectos web:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.windows.jsonc
-settings.context.personal.jsonc
-settings.web.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.windows.jsonc
+vscode/settings.context.personal.jsonc
+vscode/settings.web.jsonc
 ```
 
 macOS con contexto laboral y proyectos web:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.macos.jsonc
-settings.context.work.jsonc
-settings.web.jsonc
-settings.auto-approve.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.macos.jsonc
+vscode/settings.context.work.jsonc
+vscode/settings.web.jsonc
+vscode/settings.auto-approve.jsonc
 ```
 
 Linux personal con Flutter:
 
 ```text
-settings.base.jsonc
-settings.ai.jsonc
-settings.linux.jsonc
-settings.context.personal.jsonc
-settings.flutter.jsonc
+vscode/settings.base.jsonc
+vscode/settings.ai.jsonc
+vscode/settings.linux.jsonc
+vscode/settings.context.personal.jsonc
+vscode/settings.flutter.jsonc
 ```
 
 ## Como aplicar en VS Code
@@ -178,9 +187,9 @@ settings.flutter.jsonc
 
 ## Reglas
 
-- No copiar `settingsMAC.json` completo a nuevas maquinas.
-- No poner rutas absolutas en `settings.base.jsonc`.
-- No poner configuraciones laborales en `settings.base.jsonc`.
+- No copiar `vscode/settingsMAC.json` completo a nuevas maquinas.
+- No poner rutas absolutas en `vscode/settings.base.jsonc`.
+- No poner configuraciones laborales en `vscode/settings.base.jsonc`.
 - Mantener `chat.tools.terminal.autoApprove` fuera de la base.
 - No usar archivos de contexto personal o laboral en otra maquina salvo decision explicita.
 - Usar `.jsonc` porque estos archivos tienen comentarios.
@@ -191,12 +200,23 @@ settings.flutter.jsonc
 1. Abre Windows Terminal.
 2. Abre `Settings`.
 3. Usa `Open JSON file`.
-4. Usa `windows-terminal.settings.jsonc` como referencia.
+4. Usa `windows-terminal/settings.jsonc` como referencia.
 
 Ruta normal:
 
 ```text
 %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+```
+
+## Como usar el perfil PowerShell
+
+Los archivos en `shell/windows-powershell/` son una copia del perfil actual y su archivo comun.
+No los ejecutes como instalador. Usalos como referencia para copiar manualmente lo que quieras conservar en una nueva maquina.
+
+Ruta normal del perfil en PowerShell:
+
+```text
+$PROFILE
 ```
 
 ## Extensiones sugeridas
