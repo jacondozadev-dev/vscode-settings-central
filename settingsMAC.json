@@ -1,19 +1,20 @@
 {
     "editor.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "javascript.updateImportsOnFileMove.enabled": "always",
     "diffEditor.renderSideBySide": true,
     "diffEditor.ignoreTrimWhitespace": true,
-    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-    "lldb.launch.expressions": "native",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.codeActionsOnSave": {
-    
         "source.fixAll.eslint": "explicit",
         "source.organizeImports": "explicit",
         "source.sortMembers": "explicit"
     },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": false,
@@ -25,28 +26,34 @@
         "editor.suggestSelection": "first",
         "typescript.autoClosingTags": true
     },
-    "editor.wordWrap": "on",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "lldb.suppressUpdateNotifications": true,
-    "[yaml]": {
-        "diffEditor.ignoreTrimWhitespace": true
-    },
     "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[yaml]": {
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "chat.viewSessions.orientation": "stacked",
+    "github.copilot.nextEditSuggestions.enabled": true,
     "gitlens.ai.model": "vscode",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "lldb.suppressUpdateNotifications": true,
+    "http.proxyAuthorization": null,
+    "settingsSync.ignoredExtensions": [],
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "chat.tools.terminal.autoApprove": {
         "/^npm install$/": {
@@ -70,8 +77,5 @@
             "approve": true,
             "matchCommandLine": true
         }
-    },
-    "chat.viewSessions.orientation": "stacked",
-    "settingsSync.ignoredExtensions": [],
-    "http.proxyAuthorization": null
+    }
 }
