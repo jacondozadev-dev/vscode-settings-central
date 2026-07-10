@@ -1,0 +1,7 @@
+{
+  // Entorno laboral o sensible.
+  // Revisar antes de copiar a una maquina personal.
+  "http.proxyAuthorization": null,
+  "settingsSync.ignoredExtensions": [],
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1"
+}

@@ -1,6 +1,6 @@
 {
-  // Preferencias AI tomadas de VS Code en Windows personal.
-  // No usar en Mac laboral salvo que quieras copiar exactamente este perfil.
+  // Entorno personal.
+  // Origen: ajustes personales de Windows; revisar antes de copiar a otro contexto.
   "chatgpt.localeOverride": "es-419",
   "chatgpt.reviewDelivery": "inline",
 

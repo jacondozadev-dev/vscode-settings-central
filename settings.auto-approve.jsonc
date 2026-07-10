@@ -1,10 +1,6 @@
 {
-  // Entorno laboral o sensible.
-  // Revisar antes de copiar a una maquina personal.
-  "http.proxyAuthorization": null,
-  "settingsSync.ignoredExtensions": [],
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-
+  // Auto-aprobaciones de terminal para flujos conocidos.
+  // Mantener fuera de base y revisar antes de copiar a otra maquina.
   "chat.tools.terminal.autoApprove": {
     "/^npm install$/": {
       "approve": true,

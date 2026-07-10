@@ -1,23 +1,25 @@
 # VSCode Settings Central
 
-Repositorio para derivar configuraciones reutilizables desde `settingsMAC.json`.
+Repositorio para centralizar configuraciones reutilizables de VS Code y Windows Terminal.
 
-`settingsMAC.json` es el snapshot original de una maquina macOS laboral. No se modifica.
+`settingsMAC.json` es un archivo compuesto para macOS. No es la base ni el snapshot historico.
+Si existe `archive/settingsMAC original.json`, tratelo solo como referencia historica.
 
 ## Archivos VS Code
 
 | Archivo | Uso |
 | --- | --- |
 | `settings.base.jsonc` | Configuracion portable para macOS, Windows y Linux |
-| `settings.ai.base.jsonc` | Preferencias AI portables entre maquinas |
-| `settings.ai.windows-personal.jsonc` | Preferencias AI de Windows personal |
+| `settings.ai.jsonc` | Preferencias AI portables entre maquinas |
 | `settings.web.jsonc` | Ajustes para TypeScript, JavaScript, Angular, Ionic o Node.js |
 | `settings.flutter.jsonc` | Ajustes portables para Flutter/Dart |
 | `settings.macos.jsonc` | Ajustes especificos de macOS, como LLDB/Xcode |
 | `settings.windows.jsonc` | Ajustes especificos de Windows |
 | `settings.linux.jsonc` | Ajustes especificos de Linux |
-| `settings.work.jsonc` | Ajustes laborales o sensibles |
-| `settingsMAC.json` | Fuente original; no editar como archivo normalizado |
+| `settings.context.work.jsonc` | Ajustes laborales o sensibles |
+| `settings.context.personal.jsonc` | Ajustes personales |
+| `settings.auto-approve.jsonc` | Auto-aprobaciones explicitas de terminal |
+| `settingsMAC.json` | Composicion generada para macOS |
 
 ## Archivos Windows Terminal
 
@@ -38,7 +40,7 @@ Usar siempre:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 ```
 
 Luego agrega solo los archivos que correspondan al sistema operativo, stack y contexto.
@@ -51,21 +53,22 @@ Destino:
 %APPDATA%\Code\User\settings.json
 ```
 
-Usar:
+Windows personal:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.windows.jsonc
+settings.context.personal.jsonc
 ```
 
-Opcional segun el caso:
+Windows laboral:
 
 ```text
-settings.ai.windows-personal.jsonc
-settings.web.jsonc
-settings.flutter.jsonc
-settings.work.jsonc
+settings.base.jsonc
+settings.ai.jsonc
+settings.windows.jsonc
+settings.context.work.jsonc
 ```
 
 ### macOS
@@ -76,20 +79,22 @@ Destino:
 ~/Library/Application Support/Code/User/settings.json
 ```
 
-Usar:
+macOS personal:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.macos.jsonc
+settings.context.personal.jsonc
 ```
 
-Opcional segun el caso:
+macOS laboral:
 
 ```text
-settings.web.jsonc
-settings.flutter.jsonc
-settings.work.jsonc
+settings.base.jsonc
+settings.ai.jsonc
+settings.macos.jsonc
+settings.context.work.jsonc
 ```
 
 ### Linux
@@ -100,30 +105,45 @@ Destino:
 ~/.config/Code/User/settings.json
 ```
 
-Usar:
+Linux personal:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.linux.jsonc
+settings.context.personal.jsonc
 ```
 
-Opcional segun el caso:
+Linux laboral:
+
+```text
+settings.base.jsonc
+settings.ai.jsonc
+settings.linux.jsonc
+settings.context.work.jsonc
+```
+
+### Agregados por stack o flujo
+
+Agregar despues del sistema operativo y contexto, solo si aplica:
 
 ```text
 settings.web.jsonc
 settings.flutter.jsonc
-settings.work.jsonc
+settings.auto-approve.jsonc
 ```
+
+`settings.auto-approve.jsonc` no es personal ni laboral por si mismo. Usarlo solo si quieres permitir esas auto-aprobaciones de terminal en esa maquina.
 
 ### Ejemplos de composicion
 
-Windows con proyectos web:
+Windows personal con proyectos web:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.windows.jsonc
+settings.context.personal.jsonc
 settings.web.jsonc
 ```
 
@@ -131,18 +151,20 @@ macOS con contexto laboral y proyectos web:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.macos.jsonc
+settings.context.work.jsonc
 settings.web.jsonc
-settings.work.jsonc
+settings.auto-approve.jsonc
 ```
 
-Linux con Flutter:
+Linux personal con Flutter:
 
 ```text
 settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.jsonc
 settings.linux.jsonc
+settings.context.personal.jsonc
 settings.flutter.jsonc
 ```
 
@@ -160,7 +182,7 @@ settings.flutter.jsonc
 - No poner rutas absolutas en `settings.base.jsonc`.
 - No poner configuraciones laborales en `settings.base.jsonc`.
 - Mantener `chat.tools.terminal.autoApprove` fuera de la base.
-- No usar archivos de un contexto especifico en otra maquina salvo decision explicita.
+- No usar archivos de contexto personal o laboral en otra maquina salvo decision explicita.
 - Usar `.jsonc` porque estos archivos tienen comentarios.
 - No copiar configuracion de Windows Terminal dentro de VS Code, ni al reves.
 
