@@ -7,8 +7,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "diffEditor.renderSideBySide": true,
     "diffEditor.ignoreTrimWhitespace": true,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "javascript.updateImportsOnFileMove.enabled": "always",
+    "js/ts.updateImportsOnFileMove.enabled": "always",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
         "source.organizeImports": "explicit",
@@ -24,7 +23,7 @@
         "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
         "editor.suggest.insertMode": "replace",
         "editor.suggestSelection": "first",
-        "typescript.autoClosingTags": true
+        "js/ts.autoClosingTags.enabled": true
     },
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -47,8 +46,8 @@
     "chat.viewSessions.orientation": "stacked",
     "github.copilot.nextEditSuggestions.enabled": true,
     "gitlens.ai.model": "vscode",
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "js/ts.tsdk.path": "node_modules/typescript/lib",
+    "js/ts.tsdk.promptToUseWorkspaceVersion": true,
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
     "lldb.launch.expressions": "native",
     "lldb.suppressUpdateNotifications": true,
