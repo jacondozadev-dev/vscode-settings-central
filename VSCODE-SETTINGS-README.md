@@ -27,40 +27,132 @@ Repositorio para derivar configuraciones reutilizables desde `settingsMAC.json`.
 
 Los archivos de VS Code y Windows Terminal no son intercambiables. Aunque ambos se llaman `settings.json` en sus aplicaciones reales, usan esquemas distintos.
 
-## Como usar VS Code
+## Como generar settings de VS Code
 
-1. Abre VS Code.
-2. Abre `Preferences: Open User Settings (JSON)`.
-3. Copia primero el contenido de `settings.base.jsonc`.
-4. Agrega solo los archivos que apliquen a esa maquina o proyecto.
-5. Si hay claves repetidas, gana la ultima que pegues en `settings.json`.
+Para generar un `settings.json` final, copia los archivos indicados en el mismo orden.
+Si una clave se repite, debe prevalecer el ultimo archivo de la lista.
 
-Ejemplos:
+### Base para cualquier maquina
+
+Usar siempre:
 
 ```text
-Maquina personal Windows + web:
 settings.base.jsonc
 settings.ai.base.jsonc
-settings.ai.windows-personal.jsonc
-settings.web.jsonc
+```
+
+Luego agrega solo los archivos que correspondan al sistema operativo, stack y contexto.
+
+### Windows
+
+Destino:
+
+```text
+%APPDATA%\Code\User\settings.json
+```
+
+Usar:
+
+```text
+settings.base.jsonc
+settings.ai.base.jsonc
 settings.windows.jsonc
 ```
 
+Opcional segun el caso:
+
 ```text
-Mac laboral + web:
-settings.base.jsonc
-settings.ai.base.jsonc
+settings.ai.windows-personal.jsonc
 settings.web.jsonc
-settings.macos.jsonc
+settings.flutter.jsonc
 settings.work.jsonc
 ```
 
+### macOS
+
+Destino:
+
 ```text
-Linux + Flutter:
+~/Library/Application Support/Code/User/settings.json
+```
+
+Usar:
+
+```text
 settings.base.jsonc
+settings.ai.base.jsonc
+settings.macos.jsonc
+```
+
+Opcional segun el caso:
+
+```text
+settings.web.jsonc
 settings.flutter.jsonc
+settings.work.jsonc
+```
+
+### Linux
+
+Destino:
+
+```text
+~/.config/Code/User/settings.json
+```
+
+Usar:
+
+```text
+settings.base.jsonc
+settings.ai.base.jsonc
 settings.linux.jsonc
 ```
+
+Opcional segun el caso:
+
+```text
+settings.web.jsonc
+settings.flutter.jsonc
+settings.work.jsonc
+```
+
+### Ejemplos de composicion
+
+Windows con proyectos web:
+
+```text
+settings.base.jsonc
+settings.ai.base.jsonc
+settings.windows.jsonc
+settings.web.jsonc
+```
+
+macOS con contexto laboral y proyectos web:
+
+```text
+settings.base.jsonc
+settings.ai.base.jsonc
+settings.macos.jsonc
+settings.web.jsonc
+settings.work.jsonc
+```
+
+Linux con Flutter:
+
+```text
+settings.base.jsonc
+settings.ai.base.jsonc
+settings.linux.jsonc
+settings.flutter.jsonc
+```
+
+## Como aplicar en VS Code
+
+1. Abre VS Code.
+2. Abre `Preferences: Open User Settings (JSON)`.
+3. Copia los archivos de la seccion anterior segun la maquina.
+4. Quita comentarios si VS Code los deja marcados como error.
+5. Guarda y recarga la ventana.
 
 ## Reglas
 
@@ -68,7 +160,7 @@ settings.linux.jsonc
 - No poner rutas absolutas en `settings.base.jsonc`.
 - No poner configuraciones laborales en `settings.base.jsonc`.
 - Mantener `chat.tools.terminal.autoApprove` fuera de la base.
-- No usar `settings.ai.windows-personal.jsonc` en Mac laboral salvo decision explicita.
+- No usar archivos de un contexto especifico en otra maquina salvo decision explicita.
 - Usar `.jsonc` porque estos archivos tienen comentarios.
 - No copiar configuracion de Windows Terminal dentro de VS Code, ni al reves.
 

@@ -29,5 +29,6 @@
     "vscode",
     "vscode-insiders",
     "ms-settings"
-  ]
+  ],
+  "terminal.integrated.fontFamily": "monospace"
 }
